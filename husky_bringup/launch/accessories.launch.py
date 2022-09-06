@@ -215,7 +215,10 @@ def generate_launch_description():
                 PathJoinSubstitution(
                     [FindPackageShare("realsense2_camera"), 'launch', 'rs_launch.py']
                 )
-            )
+            ),
+            launch_arguments={
+                'pointcloud.enable' : 'true'
+            }.items()
         )
         ld.add_action(launch_primary_realsense)
 
